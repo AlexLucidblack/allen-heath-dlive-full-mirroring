@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#09121e"/><stop offset="1" stop-color="#163c43"/></linearGradient></defs>
+<rect width="1280" height="400" rx="20" fill="url(#bg)"/>
+<g fill="none" stroke="#31505c" opacity=".45"><path d="M900 0v400M980 0v400M1060 0v400M1140 0v400M1220 0v400"/><path d="M850 80h430M850 160h430M850 240h430M850 320h430"/></g>
+<g font-family="DejaVu Sans,Arial,sans-serif">
+<text x="58" y="64" fill="#77ead7" font-size="15" letter-spacing="3">INDEPENDENT CONTROL MIRROR</text>
+<text x="58" y="140" fill="#f2f7fb" font-size="42" font-weight="bold">Allen&amp;heath Dlive v2.12</text>
+<text x="58" y="204" fill="#f2f7fb" font-size="52" font-weight="bold">Full Mirroring</text>
+<text x="60" y="252" fill="#b5c8d8" font-size="20">Две системы. Один мастер. Автоматический резерв.</text>
+<rect x="58" y="290" width="182" height="44" rx="22" fill="#143e3c" stroke="#56b9a6"/><text x="149" y="318" text-anchor="middle" fill="#9af2dc" font-size="16">macOS · Windows</text>
+<rect x="256" y="290" width="176" height="44" rx="22" fill="#152a3a" stroke="#4d6d83"/><text x="344" y="318" text-anchor="middle" fill="#dce8f3" font-size="16">Python 3.10+</text>
+<rect x="448" y="290" width="174" height="44" rx="22" fill="#152a3a" stroke="#4d6d83"/><text x="535" y="318" text-anchor="middle" fill="#dce8f3" font-size="16">AH-Net TCP/UDP</text>
+<text x="60" y="370" fill="#94aebd" font-size="13">Прошивка dLive 2.12 Rev. 94091 · Приложение 0.6.6 · Без Director и MIDI</text>
+</g>
+<g transform="translate(943 111)" stroke="#78e0ce" stroke-width="3" fill="#102a36"><rect width="242" height="162" rx="18"/><path d="M40 36v90M92 36v90M144 36v90M196 36v90" stroke="#375d68"/><rect x="25" y="57" width="30" height="30" rx="4"/><rect x="77" y="86" width="30" height="30" rx="4"/><rect x="129" y="47" width="30" height="30" rx="4"/><rect x="181" y="71" width="30" height="30" rx="4"/></g>
+</svg>

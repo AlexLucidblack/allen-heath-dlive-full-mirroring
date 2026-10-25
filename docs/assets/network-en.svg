@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1050" viewBox="0 0 1400 1050">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0a1520"/><stop offset="1" stop-color="#15343b"/></linearGradient></defs>
+<rect width="1400" height="1050" rx="24" fill="url(#bg)"/>
+<g font-family="DejaVu Sans,Arial,sans-serif">
+<text x="65" y="65" fill="#78ead4" font-size="16" letter-spacing="3">NETWORK TOPOLOGY</text>
+<text x="65" y="110" fill="#f3f7fc" font-size="32" font-weight="bold">Two dLive systems — one Mirror computer</text>
+<rect x="60" y="160" width="590" height="160" rx="18" fill="#142939" stroke="#496676"/>
+<rect x="750" y="160" width="590" height="160" rx="18" fill="#142939" stroke="#496676"/>
+<text x="90" y="201" fill="#83e4d2" font-size="16">SYSTEM 1 / A</text><text x="780" y="201" fill="#83e4d2" font-size="16">SYSTEM 2 / B</text>
+<text x="90" y="248" fill="#f2f7fb" font-size="30" font-weight="bold">Surface S5000</text><text x="780" y="248" fill="#f2f7fb" font-size="30" font-weight="bold">Surface C3500</text>
+<text x="90" y="289" fill="#bfd3e0" font-size="22">192.168.1.71</text><text x="780" y="289" fill="#bfd3e0" font-size="22">192.168.2.71</text>
+<path d="M355 320v110M1045 320v110" stroke="#bc9af7" stroke-width="6"/>
+<rect x="292" y="349" width="126" height="42" rx="18" fill="#30294d"/><text x="355" y="377" text-anchor="middle" fill="#e1cffc" font-size="21">gigaACE</text>
+<rect x="982" y="349" width="126" height="42" rx="18" fill="#30294d"/><text x="1045" y="377" text-anchor="middle" fill="#e1cffc" font-size="21">gigaACE</text>
+<rect x="60" y="430" width="590" height="165" rx="18" fill="#142939" stroke="#496676"/>
+<rect x="750" y="430" width="590" height="165" rx="18" fill="#142939" stroke="#496676"/>
+<text x="90" y="479" fill="#f2f7fb" font-size="30" font-weight="bold">MixRack DM64</text><text x="780" y="479" fill="#f2f7fb" font-size="30" font-weight="bold">MixRack DM64</text>
+<text x="90" y="522" fill="#bfd3e0" font-size="22">192.168.1.70</text><text x="780" y="522" fill="#bfd3e0" font-size="22">192.168.2.70</text>
+<text x="90" y="562" fill="#7ce7d0" font-size="20">Network Control</text><text x="780" y="562" fill="#7ce7d0" font-size="20">Network Control</text>
+<path d="M355 595v140M1045 595v140" stroke="#70e6cc" stroke-width="6"/>
+<text x="115" y="641" fill="#a4e8db" font-size="17">Ethernet 1</text><text x="1110" y="641" fill="#a4e8db" font-size="17">Ethernet 2</text>
+<rect x="220" y="699" width="960" height="230" rx="22" fill="#0f2633" stroke="#60b9ad" stroke-width="2"/>
+<rect x="264" y="732" width="310" height="59" rx="12" fill="#183c43"/><text x="419" y="771" text-anchor="middle" fill="#c3f6eb" font-size="23">192.168.1.200 /24</text>
+<rect x="826" y="732" width="310" height="59" rx="12" fill="#183c43"/><text x="981" y="771" text-anchor="middle" fill="#c3f6eb" font-size="23">192.168.2.200 /24</text>
+<text x="700" y="841" text-anchor="middle" fill="#f4f8fc" font-size="30" font-weight="bold">Computer · macOS / Windows</text>
+<text x="700" y="887" text-anchor="middle" fill="#b9d1df" font-size="20">Full Mirroring · local interface 127.0.0.1:8780</text>
+<text x="65" y="980" fill="#bcdbdf" font-size="19">4 logical AH-Net sessions: 2 × MixRack + 2 × Surface · TCP 51321 / UDP 51327</text>
+<text x="65" y="1019" fill="#8eacbb" font-size="16">Example addresses. Check IP access to each Surface separately. Lines show the physical topology.</text>
+</g></svg>

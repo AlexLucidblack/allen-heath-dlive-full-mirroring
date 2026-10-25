@@ -1,0 +1,169 @@
+{
+  "source": "AHNet_Direct_Traffic (3).jsonl / diagnostics (5), v0.5.0",
+  "markers": [
+    {
+      "t": 1792683217.487041,
+      "type": "operator_marker",
+      "side": null,
+      "label": "Strip Assign: до изменения"
+    },
+    {
+      "t": 1792683230.199966,
+      "type": "operator_marker",
+      "side": null,
+      "label": "Strip Assign: после изменения"
+    },
+    {
+      "t": 1792683238.8746219,
+      "type": "operator_marker",
+      "side": null,
+      "label": "Store Scene: до"
+    },
+    {
+      "t": 1792683253.439072,
+      "type": "operator_marker",
+      "side": null,
+      "label": "Store Scene: после"
+    },
+    {
+      "t": 1792683257.184553,
+      "type": "operator_marker",
+      "side": null,
+      "label": "Store Show: до"
+    },
+    {
+      "t": 1792683275.063396,
+      "type": "operator_marker",
+      "side": null,
+      "label": "Store Show: после"
+    }
+  ],
+  "properties": [
+    {
+      "t": 1792683133.92363,
+      "type": "surface_property",
+      "side": "A",
+      "name": "Bank Switcher Manager",
+      "target": "0x1005",
+      "payload": "00",
+      "category": "bank"
+    },
+    {
+      "t": 1792683133.926079,
+      "type": "surface_property",
+      "side": "B",
+      "name": "Bank Switcher Manager",
+      "target": "0x1005",
+      "payload": "00",
+      "category": "bank"
+    },
+    {
+      "t": 1792683134.044791,
+      "type": "surface_property",
+      "side": "A",
+      "name": "Channel Left Bank Switcher",
+      "target": "0x1001",
+      "payload": "01 00 01 02 01 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "category": "bank"
+    },
+    {
+      "t": 1792683134.047013,
+      "type": "surface_property",
+      "side": "B",
+      "name": "Channel Left Bank Switcher",
+      "target": "0x1001",
+      "payload": "01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "category": "bank"
+    },
+    {
+      "t": 1792683134.084398,
+      "type": "surface_property",
+      "side": "A",
+      "name": "Channel Middle Bank Switcher",
+      "target": "0x1001",
+      "payload": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "category": "bank"
+    },
+    {
+      "t": 1792683134.0865479,
+      "type": "surface_property",
+      "side": "B",
+      "name": "Channel Middle Bank Switcher",
+      "target": "0x1001",
+      "payload": "",
+      "category": "bank"
+    },
+    {
+      "t": 1792683134.123568,
+      "type": "surface_property",
+      "side": "A",
+      "name": "Channel Right Bank Switcher",
+      "target": "0x1001",
+      "payload": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "category": "bank"
+    },
+    {
+      "t": 1792683134.127597,
+      "type": "surface_property",
+      "side": "B",
+      "name": "Channel Right Bank Switcher",
+      "target": "0x1001",
+      "payload": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "category": "bank"
+    },
+    {
+      "t": 1792683134.162754,
+      "type": "surface_property",
+      "side": "A",
+      "name": "Library File Manager",
+      "target": "0x1000",
+      "payload": "",
+      "category": "scene_show_observation"
+    },
+    {
+      "t": 1792683134.163701,
+      "type": "surface_property",
+      "side": "A",
+      "name": "South Settings Config Manager",
+      "target": "0x1000",
+      "payload": "03 03 00 05 0f 03 02 05 0f 05 02 00",
+      "category": "scene_show_observation"
+    },
+    {
+      "t": 1792683134.165766,
+      "type": "surface_property",
+      "side": "B",
+      "name": "Library File Manager",
+      "target": "0x1000",
+      "payload": "",
+      "category": "scene_show_observation"
+    },
+    {
+      "t": 1792683134.166891,
+      "type": "surface_property",
+      "side": "B",
+      "name": "South Settings Config Manager",
+      "target": "0x1000",
+      "payload": "03 03 00 05 0f 03 00 05 0f 05 02 00",
+      "category": "scene_show_observation"
+    },
+    {
+      "t": 1792683225.992773,
+      "type": "surface_property",
+      "side": "A",
+      "name": "Channel Left Bank Switcher",
+      "target": "0x1001",
+      "payload": "01 00 01 02 01 03 00 00 01 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0d 00 0d 01 0d 02 0d 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "category": "bank"
+    },
+    {
+      "t": 1792683242.7480488,
+      "type": "surface_property",
+      "side": "A",
+      "name": "Surface Scene Manager",
+      "target": "0x100c",
+      "payload": "00 19",
+      "category": "scene_show_observation"
+    }
+  ]
+}

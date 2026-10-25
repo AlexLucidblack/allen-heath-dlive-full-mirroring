@@ -1,0 +1,43 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const html=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
+const source=html.match(/<script>([\s\S]*)<\/script>/)[1];
+const flush=()=>new Promise(resolve=>setImmediate(resolve));
+async function createUI(saved='ru',blocked=false){
+ const nodes={};
+ for(const m of html.matchAll(/id="([^"]+)"/g))nodes[m[1]]={value:'',disabled:false,textContent:'',className:'',innerHTML:'',reportValidity:()=>true};
+ const labels=[...html.matchAll(/data-i18n="([^"]+)"/g)].map(m=>({dataset:{i18n:m[1]},textContent:''}));
+ const placeholders=[...html.matchAll(/data-placeholder="([^"]+)"/g)].map(m=>({dataset:{placeholder:m[1]},placeholder:''}));
+ const cfg={direction:'A_to_B',probe:'capture_all',auto_redundancy:true,A:{ip:'192.168.1.70',tcp:51321,udp:51327,model:'DM64',surface_ip:'192.168.1.71',surface_model:'S5000',local_ip:'192.168.1.200'},B:{ip:'192.168.2.70',tcp:51321,udp:51327,model:'DM64',surface_ip:'192.168.2.71',surface_model:'C3500',local_ip:'192.168.2.200'}};
+ const state={config:cfg,sides:{},surfaces:{},redundancy:{},events:[],counts:{},running:false};
+ nodes.settings.querySelectorAll=()=>Object.entries(nodes).filter(([id])=>id==='direction'||/^[AB]-/.test(id)).map(([,n])=>n);
+ let stored=saved,networkCalls=0;
+ const document={documentElement:{lang:'ru'},getElementById:id=>{assert(nodes[id],id);return nodes[id]},querySelectorAll:selector=>selector==='[data-i18n]'?labels:placeholders};
+ const localStorage={getItem:()=>{if(blocked)throw Error('storage blocked');return stored},setItem:(key,value)=>{if(blocked)throw Error('storage blocked');assert.equal(key,'dlive-mirror-language');stored=value}};
+ const ctx=vm.createContext({document,localStorage,fetch:async()=>{networkCalls++;return {ok:true,json:async()=>state}},setInterval:()=>0,setTimeout,Date,URL,Blob});
+ const run=s=>vm.runInContext(s,ctx);run(source);await flush();
+ return {nodes,labels,placeholders,state,document,run,stored:()=>stored,calls:()=>networkCalls};
+}
+(async()=>{
+ const ui=await createUI();assert.equal(ui.document.documentElement.lang,'ru');assert.equal(ui.nodes.mode.textContent,'Передача остановлена');
+ assert(ui.labels.every(n=>n.textContent&&!n.textContent.startsWith('static_')));
+ ui.nodes['A-ip'].value='192.168.1.75';ui.nodes.direction.value='B_to_A';
+ const before=ui.run('JSON.stringify(formConfig())'),calls=ui.calls();
+ ui.run("setLanguage('en')");
+ assert.equal(ui.document.documentElement.lang,'en');assert.equal(ui.stored(),'en');
+ assert.equal(ui.nodes.mode.textContent,'Forwarding stopped');assert.equal(ui.run('JSON.stringify(formConfig())'),before);assert.equal(ui.calls(),calls);
+ for(const [key,text]of [['connect','1. Connect both MixRacks'],['disconnect','Disconnect both'],['local_a','Computer IP → A'],['initial_direction','Initial direction']])assert(ui.labels.some(n=>n.dataset.i18n===key&&n.textContent===text));
+ assert(ui.placeholders.every(n=>!/[А-Яа-я]/.test(n.placeholder)));
+ ui.run("setFeedback('error','Неверный IP: local_ip')");assert.equal(ui.nodes.feedback.textContent,'Error: Invalid IP address: local_ip');
+ ui.run("setLanguage('ru')");assert.equal(ui.nodes.feedback.textContent,'Ошибка: Неверный IP: local_ip');
+ ui.run("setLanguage('en')");
+ ui.state.running=true;ui.state.redundancy={master:'B',phase:'catching_up',health:{A:true,B:true},counts:{pending:2}};
+ ui.state.config.direction='B_to_A';ui.state.sides={A:{connected:true},B:{connected:true}};ui.state.surfaces={sides:{A:{phase:'ready'},B:{phase:'ready'}}};
+ ui.run('renderStatus(current)');assert(ui.nodes.mode.textContent.includes('Master 2 · 2 → 1 · replaying changes'));assert.equal(ui.nodes.queue.textContent,'Queue: 2');assert(!ui.nodes.language.disabled);
+ ui.run("setLanguage('ru')");assert(ui.nodes.mode.textContent.includes('Мастер 2'));assert.equal(ui.run('formConfig().direction'),'B_to_A');
+ const restored=await createUI(ui.stored());assert.equal(restored.document.documentElement.lang,'ru');
+ const english=await createUI('en');assert.equal(english.nodes.mode.textContent,'Forwarding stopped');
+ const invalid=await createUI('fr');assert.equal(invalid.document.documentElement.lang,'ru');
+ const blocked=await createUI('en',true);blocked.run("setLanguage('en')");assert.equal(blocked.nodes.mode.textContent,'Forwarding stopped');
+ assert(!html.includes('value="both"'));assert(!html.includes('type="checkbox"'));
+ console.log('PASS UI localization: RU/EN labels, placeholders, statuses, errors, stored preference, blocked storage, in-session language changes and unchanged device configuration.');
+})().catch(error=>{console.error(error);process.exitCode=1});
